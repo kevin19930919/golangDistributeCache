@@ -71,3 +71,7 @@ func (c *Cache) RemoveOldest() {
 		}
 	}
 }
+
+func (c *Cache) Len() int {
+	return c.ll.Len()
+}
