@@ -48,3 +48,23 @@ func TestRemoveoldest(t *testing.T) {
 		t.Log("remove oldest key1 success")
 	}
 }
+
+func TestOnEvicted(t *testing.T) {
+	keys := make([]string, 0)
+	// define callback function
+	callback := func(key string, value Value) {
+		keys = append(keys, key)
+	}
+	lru := New(int64(10), callback)
+	lru.Add("k1", String("123"))
+	lru.Add("k2", String("val2"))
+	lru.Add("k3", String("val3"))
+
+	expect := []string{"k1", "k2"}
+
+	if !reflect.DeepEqual(expect, keys) {
+		t.Log("call onvicted func fail")
+	} else {
+		t.Log("call onvicted func success")
+	}
+}
