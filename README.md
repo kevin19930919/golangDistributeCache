@@ -17,19 +17,21 @@ git checkout -b <new branch name>
 ```shell
 git add <file you updated>
 ```
+
 5. Commit to local git repository
 ```shell
 git commit -m "<type>[optional scope]: <description>"
 ```
-please check the [commit message convention](https://www.conventionalcommits.org/en/v1.0.0/)
+please check [commit message convention](https://www.conventionalcommits.org/en/v1.0.0/)
 
-6. Use `rebase` to merge branch
+6. Use `rebase` to merge `develop` branch
 ```shell
 git rebase develop
 ```
-[why use `rebase`?](https://www.conventionalcommits.org/en/v1.0.0/)
+please check [why use `rebase`?](https://www.conventionalcommits.org/en/v1.0.0/)
 
 7. Push to remote repository
 ```shell
 git push
 ```
+You may not able to push commits because your branch has diverged from the published branch in the remote. If nobody is working on the same branch with you, you can use `git push -f` to push the rebased feature branch.[check the article](https://gitbook.tw/chapters/github/using-force-push)
