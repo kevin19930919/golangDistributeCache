@@ -1,21 +1,23 @@
 
 ## 1. How to Contribute
 
-1. <b>Clone from `develop` branch</b>
+1. <b>Clone from `develop` branch.</b>
+
+Every new feature should clone from `develop` branch, this branch will directly deploy to staging server.
 ```shell
 git clone -b develop git@github.com:chatbotgang/cantata.git
 ```
 
-2. <b>Create your new branch and switch to it</b>
+2. <b>Create your new branch and switch to it.</b>
 ```shell
-git checkout -b <new branch name>
+git checkout -b <New Branch Name>
 ```
 
 3. <b>Making some progress.</b>
 
 4. <b>Add your contributions to staging area</b>
 ```shell
-git add <file you updated>
+git add <Files You Updated>
 ```
 
 5. <b>Commit to local git repository</b>
