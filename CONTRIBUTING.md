@@ -14,7 +14,7 @@ git checkout -b <New Branch Name>
 
 3. <b>Making some progress.</b>
 
-4. <b>Add your contributions to staging area</b>
+4. <b>Add your updates to staging area</b>
 ```shell
 git add <Files You Updated>
 ```
@@ -25,6 +25,12 @@ git commit -m "<type>[optional scope]: <description>"
 ```
 Please check [commit message convention](https://www.conventionalcommits.org/en/v1.0.0/)
 
+6. <b>Use `rebase` to merge `develop` branch</b>
+```shell
+git rebase develop
+```
+Please check [why use `rebase`?](https://www.conventionalcommits.org/en/v1.0.0/)
+
 6. <b>Push to remote repository</b>
 ```shell
 git push
@@ -34,11 +40,15 @@ You may not able to push commits because your branch has diverged from the publi
 7. <b>Open a pull PR, and assign at least one reviewer</b>
 In this stage, CI will automatically trigger some check, include unit tests.......
 
-8. <b>After reviewers approve your PR, merge your update to `develop` brancn with command `rebase`</b>
-```shell
-git rebase develop
-```
-Please check [why use `rebase`?](https://www.conventionalcommits.org/en/v1.0.0/)
+8. <b>After reviewers approve your PR, merge your update to `develop` branch with `rebase merge`</b>
+In this stage, CD will automatically deploy your updates to `staging` env.
 
-9.<b>After your PR merge into `develop` branch, CD will deploy your update to `staging` env
-check if your update works fine in `staging` env
+9. <b>Check if your updates works fine in `staging` env</b>
+  
+10. <b>Open a release PR from `develop` into `main` branch.</b>
+The release PR page will show the diff commits for this PR, select all commit's authors as reviewer. This PR can't be merged untill all reviewers approved.
+ 
+11. <b>Annouce release time in Slack channel `team-eng-backend`.</b>
+
+12. <b>At launch time, if all reviewers already approved, merge this PR with `merge commit`.</b>
+In this stage, CD will automatically deploy all updates to `production` env.
