@@ -1,5 +1,5 @@
 
-## 1. How to Contribute
+## How to Contribute
 
 1. <b>Clone from `develop` branch.</b>
 Every new feature should clone from `develop` branch, this branch will deploy to staging server.
