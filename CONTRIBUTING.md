@@ -1,5 +1,5 @@
 
-# 1. How to Contribute
+## How to Contribute
 
 
 ## Developing 
